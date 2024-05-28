@@ -37,8 +37,9 @@ const brainEven = (name) => {
 
   if (i < maxAttempts) {
     console.log(`Let's try again, ${name}!`);
+  } else {
+    console.log(`Congratulations, ${name}!`);
   }
-  console.log(`Congratulations, ${name}!`);
 };
 
 export default brainEven;
