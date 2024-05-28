@@ -9,11 +9,9 @@ const brainGame = () => {
   console.log(`Hello, ${name}!`);
 
   const result = brainEven();
-  
   if (!result) {
     console.log(`Let's try again, ${name}!`);
-  }
-  else {
+  } else {
     console.log(`Congratulations, ${name}!`);
   }
 };
