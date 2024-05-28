@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import readLineSync from 'readline-sync';
 
-const brainEven = () => {
+const brainEven = (name) => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   const maxAttempts = 3;
   const maxNum = 100;
@@ -36,10 +36,9 @@ const brainEven = () => {
   }
 
   if (i < maxAttempts) {
-    return false;
+    console.log(`Let's try again, ${name}!`);
   }
-
-  return true;
+  console.log(`Congratulations, ${name}!`);
 };
 
 export default brainEven;

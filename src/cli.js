@@ -8,12 +8,7 @@ const brainGame = () => {
   const name = readLineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
 
-  const result = brainEven();
-  if (!result) {
-    console.log(`Let's try again, ${name}!`);
-  } else {
-    console.log(`Congratulations, ${name}!`);
-  }
+  brainEven(name);
 };
 
 export default brainGame;
