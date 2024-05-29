@@ -8,3 +8,6 @@ Demo of brain-even:
 
 Demo of brain-calc:
 [![asciicast](https://asciinema.org/a/661667.svg)](https://asciinema.org/a/661667)
+
+Demo of brain-gcd:
+[![asciicast](https://asciinema.org/a/661678.svg)](https://asciinema.org/a/661678)
