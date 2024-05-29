@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import {glogic as glogic, randomN as randomN, calcRes as calcRes} from '../../src/index.js';
+import { glogic, randomN, calcRes } from '../../src/index.js';
 import getName from '../../src/cli.js';
 
 const name = getName();
@@ -24,10 +24,10 @@ while (j < maxAttempts && isAnswerCorrect === true) {
   // Determine the correct result of each attempt
   const result = calcRes(n1, n2, operator);
 
+  // Run the main game logic
   isAnswerCorrect = glogic(result, expression);
   j += 1;
 }
-//
 
 if (j < maxAttempts) {
   console.log(`Let's try again, ${name}!`);
