@@ -3,4 +3,8 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/5be3bc33b45e657f2411/maintainability)](https://codeclimate.com/github/bdzhev/frontend-project-44/maintainability)
 
-Link to the demo https://asciinema.org/a/661531 
+Demo of brain-even:
+[![asciicast](https://asciinema.org/a/661668.svg)](https://asciinema.org/a/661668)
+
+Demo of brain-calc:
+[![asciicast](https://asciinema.org/a/661667.svg)](https://asciinema.org/a/661667)
