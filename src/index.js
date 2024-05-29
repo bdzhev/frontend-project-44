@@ -33,18 +33,22 @@ const calcResult = (num1, num2, operator) => {
 }
 
 const findGCD = (num1, num2) => {
+
+  // Function compares if the n1 and n2 is divisible by the current number
+  const checkForGCD = (currentDivisor, n1, n2) =>{
+    if (num1 % i === 0 && num2 % i === 0) {
+      return i;
+  };
+
   if (num1 === num2) {
     return num1;
   } else if (num1 > num2) {
     for (let i = num1; i > 0; i -= 1) {
-      if (num1 % i === 0 && num2 % i === 0) {
-        return i;
-      }
+      checkForGCD(num1, num2, i);
     }
   } else {
     for(let i = num2; i > 0; i -= 1) {
-      if (num1 % i === 0 && num2 % i === 0) {
-        return i;
+      checkForGCD(num1, num2, i);
       }
     }
   }
