@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { glogic, randomN, findGCD } from '../../src/index.js';
+import { glogic, randomN, printResult } from '../../src/index.js';
 import getName from '../../src/cli.js';
 
 const name = getName();
@@ -39,9 +39,4 @@ while (j < maxAttempts && isAnswerCorrect === true) {
   j += 1;
 }
 
-if (j < maxAttempts) {
-  console.log(`Let's try again, ${name}!`);
-} else {
-  console.log(`Congratulations, ${name}!`);
-}
-
+printResult(j, maxAttempts, name);

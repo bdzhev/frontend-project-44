@@ -51,4 +51,12 @@ const findGCD = (num1, num2) => {
   return 1;
 };
 
-export {gameLogic as glogic, randomNum as randomN, calcResult as calcRes, findGCD as findGCD};
+const printResult = (currIndex, maxAttempts, name) => {
+  if (currIndex < maxAttempts) {
+    console.log(`Let's try again, ${name}!`);
+  } else {
+    console.log(`Congratulations, ${name}!`);
+  }
+};
+
+export {gameLogic as glogic, randomNum as randomN, calcResult as calcRes, findGCD as findGCD, printResult as printResult};
