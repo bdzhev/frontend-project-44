@@ -32,4 +32,23 @@ const calcResult = (num1, num2, operator) => {
   }
 }
 
-export {gameLogic as glogic, randomNum as randomN, calcResult as calcRes};
+const findGCD = (num1, num2) => {
+  if (num1 === num2) {
+    return num1;
+  } else if (num1 > num2) {
+    for (let i = num1; i > 0; i -= 1) {
+      if (num1 % i === 0 && num2 % i === 0) {
+        return i;
+      }
+    }
+  } else {
+    for(let i = num2; i > 0; i -= 1) {
+      if (num1 % i === 0 && num2 % i === 0) {
+        return i;
+      }
+    }
+  }
+  return 1;
+};
+
+export {gameLogic as glogic, randomNum as randomN, calcResult as calcRes, findGCD as findGCD};
