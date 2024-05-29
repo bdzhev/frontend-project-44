@@ -11,3 +11,6 @@ Demo of brain-calc:
 
 Demo of brain-gcd:
 [![asciicast](https://asciinema.org/a/661678.svg)](https://asciinema.org/a/661678)
+
+Demo of brain-progression:
+[![asciicast](https://asciinema.org/a/661698.svg)](https://asciinema.org/a/661698)
