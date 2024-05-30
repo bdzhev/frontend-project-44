@@ -13,23 +13,25 @@ const primeNums = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43];
 let j = 0;
 let isAnswerCorrect = true;
 while (j < maxAttempts && isAnswerCorrect === true) {
-// Generate numbers and the operator
-const num = randomN(minNum, maxNum);
-const result = [];
-if (primeNums.includes(num)) {
-  result.push('yes');
-} else {
-  result.push('no');
-}
+  // Generate numbers and the operator
+  const num = randomN(minNum, maxNum);
+  const result = [];
+  if (primeNums.includes(num)) {
+    result.push('yes');
+  } else {
+    result.push('no');
+  }
 
-// Form an expression
-const expression = `${num}`;
+  // Form an expression
+  const expression = `${num}`;
 
-// Determine the correct result of each attempt
+  // Determine the correct result of each attempt
 
-// Run the main game logic
-isAnswerCorrect = glogic(result[0], expression);
-  j += 1;
+  // Run the main game logic
+  isAnswerCorrect = glogic(result[0], expression);
+  if (isAnswerCorrect === true) {
+    j += 1;
+  }
 }
 
 printResult(j, maxAttempts, name);

@@ -36,7 +36,9 @@ while (j < maxAttempts && isAnswerCorrect === true) {
 
   // Run the main game logic
   isAnswerCorrect = glogic(correctAnswer, expression);
-  j += 1;
+  if (isAnswerCorrect === true) {
+    j += 1;
+  }
 }
 
 printResult(j, maxAttempts, name);
