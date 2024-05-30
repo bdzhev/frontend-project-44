@@ -28,7 +28,7 @@ while (j < maxAttempts && isAnswerCorrect === true) {
   // Numbers have even index
   const corrAnsIndex = [randomN(0, numsInArr) * 2];
   const correctAnswer = progArr[corrAnsIndex].toString();
-  progArr[corrAnsIndex] = '...';
+  progArr[corrAnsIndex] = '..';
 
   // Form an expression
   // Insert spaces so the expression can be formed
