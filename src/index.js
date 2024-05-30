@@ -7,39 +7,36 @@ const gameLogic = (rightAns, expression) => {
   if (rightAns === answer) {
     console.log('Correct!');
     return true;
-  } else {
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAns}'.`);
-    return false;
   }
-
+  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAns}'.`);
+  return false;
 };
 
-const randomNum = (lowerBound, upperBound) => {
-  return Math.floor(Math.random() * (upperBound - lowerBound) + lowerBound);
-};
+const randomNum = (lowerBound, upperBound) => Math.floor(Math.random()
+* (upperBound - lowerBound) + lowerBound);
 
 const calcResult = (num1, num2, operator) => {
-  switch (operator){
+  switch (operator) {
     case '+':
       return (num1 + num2).toString();
-      break;
     case '-':
       return (num1 - num2).toString();
-      break;
     case '*':
       return (num1 * num2).toString();
-      break;
+    default:
+      return null;
   }
-}
+};
 
 const findGCD = (num1, num2) => {
   // Function compares if the n1 and n2 is divisible by the current number
   const checkForGCD = (n1, n2) => {
-    for (let i = n1; i > 0; i -= 1) {
+    for (let i = n1; i > 1; i -= 1) {
       if (n1 % i === 0 && n2 % i === 0) {
         return i;
       }
     }
+    return 1;
   };
 
   if (num1 === num2) {
@@ -55,12 +52,6 @@ const findGCD = (num1, num2) => {
   return result;
 };
 
-
-
-
-
-
-
 const printResult = (currIndex, maxAttempts, name) => {
   if (currIndex < maxAttempts) {
     console.log(`Let's try again, ${name}!`);
@@ -69,4 +60,6 @@ const printResult = (currIndex, maxAttempts, name) => {
   }
 };
 
-export {gameLogic as glogic, randomNum as randomN, calcResult as calcRes, findGCD as findGCD, printResult as printResult};
+export {
+  gameLogic as glogic, randomNum as randomN, calcResult as calcRes, findGCD, printResult,
+};

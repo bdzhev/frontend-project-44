@@ -14,8 +14,8 @@ let j = 0;
 let isAnswerCorrect = true;
 while (j < maxAttempts && isAnswerCorrect === true) {
   // Generate an array of nums
-  const progArr =[];
-  // Number that will be added 
+  const progArr = [];
+  // Number that will be added
   const progNum = randomN(minNum, maxNum);
   progArr.push(randomN(minNum, maxNum), ' ');
 
@@ -32,7 +32,7 @@ while (j < maxAttempts && isAnswerCorrect === true) {
 
   // Form an expression
   // Insert spaces so the expression can be formed
-  const expression = "".concat(...progArr);
+  const expression = ''.concat(...progArr);
 
   // Run the main game logic
   isAnswerCorrect = glogic(correctAnswer, expression);

@@ -1,5 +1,7 @@
 #!/usr/bin/env node
-import { glogic, randomN, findGCD, printResult } from '../../src/index.js';
+import {
+  glogic, randomN, findGCD, printResult,
+} from '../../src/index.js';
 import getName from '../../src/cli.js';
 
 const name = getName();
