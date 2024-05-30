@@ -4,7 +4,7 @@ import getName from '../../src/cli.js';
 
 const name = getName();
 
-console.log('Answer "yes" if the number is prime, otherwise answer "no".');
+console.log('Answer "yes" if the number is prime. otherwise answer "no".');
 const maxAttempts = 3;
 const maxNum = 50;
 const minNum = 1;
