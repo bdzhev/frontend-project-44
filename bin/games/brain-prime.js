@@ -8,7 +8,7 @@ console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 const maxAttempts = 3;
 const maxNum = 50;
 const minNum = 1;
-const primeNums = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43];
+const primeNums = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47];
 
 let j = 0;
 let isAnswerCorrect = true;
