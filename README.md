@@ -3,6 +3,52 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/5be3bc33b45e657f2411/maintainability)](https://codeclimate.com/github/bdzhev/frontend-project-44/maintainability)
 
+
+# Игра 'Brain-games' // The 'Brain-games' terminal game
+
+## Описание / Descrioption
+Brain-games – это простая математическая игра-квиз, в которую можно сыграть с помощью командной строки  вашего компюьтера.
+ENG: Brain-games is a simple maths quiz-game, which can be played in your terminal.
+
+## Требования / Requirements
+Минимальные требования:
+- Node.js 21.7.3 и выше
+
+ENG: Minimal requirements:
+- Node.js 21.7.3 and higher
+
+## Установка / Installation
+Для загрузки, выполните команду 'install' в папке программы.
+ENG: For a successful download, enter and run 'install' while in the program's main file.
+
+## Инструкция / Manual
+```
+- install: загрузка необходимых файлов для работы игры
+ENG: - install: install and ready the game for launching
+```
+
+```
+- brain-games: запуск программы, которая приветствует игрока
+ENG: - brain-games: launch a program that greats the player
+```
+Команды запуска игр / Game launching commands
+- brain-even: игра, в  которой нужно определить четное число или нет
+- brain-calc: игра, в  которой нужно определить результат операции сложения, умножения и деления двух чисел
+- brain-gcd: игра, в которой необходимо определить наибольший общий делитель двух чисел 
+- brain-prime: игра, в которой нужно определить простое ли число
+- brain-progression: игра, в которой необходимо определить пропущенное число в последовательности
+
+ENG:
+- brain-even: a game in which you must guess whether the number is even or not
+- brain-calc: a game in which you must guess the result of addition, multiplication or substraction of two numbers
+- brain-gcd: a game in which you must guess the greatest common divider of two numbers
+- brain-prime: a game in which you must guess whether the number is prime or not
+- brain-progression: a game in which you must guess the missing number in a progression
+
+
+## Демо использования и игрового процесса
+
+
 Demo of brain-even:
 [![asciicast](https://asciinema.org/a/661668.svg)](https://asciinema.org/a/661668)
 
