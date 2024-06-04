@@ -1,11 +1,14 @@
 #!/usr/bin/env node
 
 import readLineSync from 'readline-sync';
-import greeting from './cli.js';
 
 const gameLogic = (introQuestion, questionsAndAnswers) => {
   const maxAttempts = 3;
-  const userName = greeting();
+
+  console.log('Welcome to the Brain Games!');
+  const userName = readLineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!`);
+
   console.log(introQuestion);
 
   for (let i = 0; i < maxAttempts; i += 1) {
