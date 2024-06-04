@@ -23,28 +23,53 @@ ENG: For a successful download, enter and run 'install' while in the program's m
 
 ## Инструкция / Manual
 ```
-- install: загрузка необходимых файлов для работы игры
-ENG: - install: install and ready the game for launching
+install: загрузка необходимых файлов для работы игры
+```
+ENG:
+```
+install: install and ready the game for launching
 ```
 
 ```
-- brain-games: запуск программы, которая приветствует игрока
-ENG: - brain-games: launch a program that greats the player
+brain-games: запуск программы, которая приветствует игрока
+```
+ENG: 
+```
+brain-games: launch a program that greats the player
 ```
 Команды запуска игр / Game launching commands
-- brain-even: игра, в  которой нужно определить четное число или нет
-- brain-calc: игра, в  которой нужно определить результат операции сложения, умножения и деления двух чисел
-- brain-gcd: игра, в которой необходимо определить наибольший общий делитель двух чисел 
-- brain-prime: игра, в которой нужно определить простое ли число
-- brain-progression: игра, в которой необходимо определить пропущенное число в последовательности
+```
+brain-even: игра, в  которой нужно определить четное число или нет
+```
+```
+brain-calc: игра, в  которой нужно определить результат операции сложения, умножения и деления двух чисел
+```
+```
+brain-gcd: игра, в которой необходимо определить наибольший общий делитель двух чисел 
+```
+```
+brain-prime: игра, в которой нужно определить простое ли число
+```
+```
+brain-progression: игра, в которой необходимо определить пропущенное число в последовательности
+```
 
 ENG:
-- brain-even: a game in which you must guess whether the number is even or not
-- brain-calc: a game in which you must guess the result of addition, multiplication or substraction of two numbers
-- brain-gcd: a game in which you must guess the greatest common divider of two numbers
-- brain-prime: a game in which you must guess whether the number is prime or not
-- brain-progression: a game in which you must guess the missing number in a progression
-
+```
+brain-even: a game in which you must guess whether the number is even or not
+```
+```
+brain-calc: a game in which you must guess the result of addition, multiplication or substraction of two numbers
+```
+```
+brain-gcd: a game in which you must guess the greatest common divider of two numbers
+```
+```
+brain-prime: a game in which you must guess whether the number is prime or not
+```
+```
+brain-progression: a game in which you must guess the missing number in a progression
+```
 
 ## Демо использования и игрового процесса
 
