@@ -1,65 +1,24 @@
 #!/usr/bin/env node
+
 import readLineSync from 'readline-sync';
+import greeting from './cli.js';
 
-const gameLogic = (rightAns, expression) => {
-  console.log(`Question: ${expression}`);
-  const answer = readLineSync.question('Your answer: ');
-  if (rightAns === answer) {
-    console.log('Correct!');
-    return true;
-  }
-  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAns}'.`);
-  return false;
-};
+const gameLogic = (introQuestion, questionsAndAnswers) => {
+  const maxAttempts = 3;
+  const userName = greeting();
+  console.log(introQuestion);
 
-const randomNum = (lowerBound, upperBound) => Math.floor(Math.random()
-* (upperBound - lowerBound) + lowerBound);
-
-const calcResult = (num1, num2, operator) => {
-  switch (operator) {
-    case '+':
-      return (num1 + num2).toString();
-    case '-':
-      return (num1 - num2).toString();
-    case '*':
-      return (num1 * num2).toString();
-    default:
-      return null;
-  }
-};
-
-const findGCD = (num1, num2) => {
-  // Function compares if the n1 and n2 is divisible by the current number
-  const checkForGCD = (n1, n2) => {
-    for (let i = n1; i > 1; i -= 1) {
-      if (n1 % i === 0 && n2 % i === 0) {
-        return i;
-      }
+  for (let i = 0; i < maxAttempts; i += 1) {
+    console.log(`Question: ${questionsAndAnswers[i][0]}`);
+    const answer = readLineSync.question('Your answer: ');
+    if (questionsAndAnswers[i][1] !== answer) {
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${questionsAndAnswers[i][1]}'.`);
+      return console.log(`Let's try again, ${userName}!`);
     }
-    return 1;
-  };
-
-  if (num1 === num2) {
-    return num1;
+    console.log('Correct!');
   }
 
-  let result = 0;
-  if (num1 > num2) {
-    result = checkForGCD(num1, num2);
-  } else {
-    result = checkForGCD(num2, num1);
-  }
-  return result;
+  return console.log(`Congratulations, ${userName}!`);
 };
 
-const printResult = (currIndex, maxAttempts, name) => {
-  if (currIndex < maxAttempts) {
-    console.log(`Let's try again, ${name}!`);
-  } else {
-    console.log(`Congratulations, ${name}!`);
-  }
-};
-
-export {
-  gameLogic as glogic, randomNum as randomN, calcResult as calcRes, findGCD, printResult,
-};
+export default gameLogic;
