@@ -7,13 +7,13 @@ const introText = 'Answer "yes" if the number is even, otherwise answer "no".';
 const maxNum = 100;
 const minNum = 1;
 
-const even = () => {
-  const isEven = (number) => (number % 2 === 0 ? 'yes' : 'no');
+const isEven = (number) => (number % 2 === 0);
 
+const even = () => {
   const gameRoundData = [];
   for (let j = 0; j < 3; j += 1) {
     const num = genRandomNum(minNum, maxNum);
-    const correctAnswer = isEven(num);
+    const correctAnswer = isEven(num) ? 'yes' : 'no';
     gameRoundData.push([num.toString(), correctAnswer]);
   }
 
