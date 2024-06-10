@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import { playGame, maxAttempts } from '../index.js';
-import { genRandomNum } from '../utils.js';
+import playGame from '../index.js';
+import genRandomNum from '../utils.js';
 
 const introText = 'Find the greatest common divisor of given numbers.';
 const maxNum = 100;
@@ -14,17 +14,16 @@ const findGCD = (num1, num2) => {
   return findGCD(num2 % num1, num1);
 };
 
-const gcd = () => {
-  const gameRounds = [];
-  for (let i = 0; i < maxAttempts; i += 1) {
-    const num1 = genRandomNum(minNum, maxNum);
-    const num2 = genRandomNum(minNum, maxNum);
-    const correctAnswer = (findGCD(num1, num2)).toString();
-    const roundQuestion = `${num1} ${num2}`;
-    gameRounds.push([roundQuestion, correctAnswer]);
-  }
+const genGCDRound = () => {
+  const num1 = genRandomNum(minNum, maxNum);
+  const num2 = genRandomNum(minNum, maxNum);
+  const correctAnswer = (findGCD(num1, num2)).toString();
+  const roundQuestion = `${num1} ${num2}`;
+  return [roundQuestion, correctAnswer];
+};
 
-  playGame(introText, gameRounds);
+const gcd = () => {
+  playGame(introText, genGCDRound);
 };
 
 export default gcd;

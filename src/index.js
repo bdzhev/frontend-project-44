@@ -4,7 +4,7 @@ import readLineSync from 'readline-sync';
 
 const maxAttempts = 3;
 
-const playGame = (introText, gameRounds) => {
+const playGame = (introText, genGameRound) => {
   console.log('Welcome to the Brain Games!');
   const userName = readLineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
@@ -12,7 +12,7 @@ const playGame = (introText, gameRounds) => {
   console.log(introText);
 
   for (let i = 0; i < maxAttempts; i += 1) {
-    const [roundQuestion, correctAnswer] = gameRounds[i];
+    const [roundQuestion, correctAnswer] = genGameRound();
     console.log(`Question: ${roundQuestion}`);
     const userAnswer = readLineSync.question('Your answer: ');
     if (correctAnswer !== userAnswer) {
@@ -26,4 +26,4 @@ const playGame = (introText, gameRounds) => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-export { playGame, maxAttempts };
+export default playGame;

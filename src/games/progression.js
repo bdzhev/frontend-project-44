@@ -1,33 +1,35 @@
 #!/usr/bin/env node
 
-import { playGame, maxAttempts } from '../index.js';
-import { genRandomNum } from '../utils.js';
+import playGame from '../index.js';
+import genRandomNum from '../utils.js';
 
 const introText = 'What number is missing in the progression?';
 const maxNum = 10;
 const minNum = 1;
 const numCount = 10;
 
-const progression = () => {
-  const gameRounds = [];
-  for (let i = 0; i < maxAttempts; i += 1) {
-    const nums = [];
-    const addend = genRandomNum(minNum, maxNum);
-
-    nums.push(genRandomNum(minNum, maxNum), ' ');
-    for (let j = 1; j < numCount; j += 1) {
-      nums.push(nums.at(-2) + addend);
-      nums.push(' ');
-    }
-
-    const missNumIndex = [genRandomNum(0, numCount - 1) * 2];
-    const correctAnswer = nums[missNumIndex].toString();
-    nums[missNumIndex] = '..';
-    const roundQuestion = ''.concat(...nums);
-    gameRounds.push([roundQuestion, correctAnswer]);
+const genProgression = (progressionLen, addend) => {
+  const startNum = genRandomNum(minNum, maxNum);
+  const progressionNums = [];
+  for (let i = 0; i < progressionLen; i += 1) {
+    const nextProgressionNum = startNum + i * addend;
+    progressionNums.push(nextProgressionNum);
   }
+  return progressionNums;
+};
 
-  playGame(introText, gameRounds);
+const genProgressionRound = () => {
+  const addend = genRandomNum(minNum, maxNum);
+  const progressionNums = genProgression(numCount, addend);
+  const missingNumIndex = genRandomNum(0, numCount - 1);
+  const correctAnswer = progressionNums[missingNumIndex].toString();
+  progressionNums[missingNumIndex] = '..';
+  const roundQuestion = progressionNums.join(' ');
+  return [roundQuestion, correctAnswer];
+};
+
+const progression = () => {
+  playGame(introText, genProgressionRound);
 };
 
 export default progression;

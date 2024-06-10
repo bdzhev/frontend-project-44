@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import { playGame, maxAttempts } from '../index.js';
-import { genRandomNum } from '../utils.js';
+import playGame from '../index.js';
+import genRandomNum from '../utils.js';
 
 const introText = 'What is the result of the expression?';
 const maxNum = 10;
@@ -21,19 +21,17 @@ const calcResult = (num1, num2, operator) => {
   }
 };
 
+const genCalcRound = () => {
+  const num1 = genRandomNum(minNum, maxNum);
+  const num2 = genRandomNum(minNum, maxNum);
+  const operator = operators[genRandomNum(0, operators.length - 1)];
+  const roundQuestion = `${num1} ${operator} ${num2}`;
+  const correctAnswer = calcResult(num1, num2, operator).toString();
+  return [roundQuestion, correctAnswer];
+};
+
 const calc = () => {
-  const gameRounds = [];
-  for (let i = 0; i < maxAttempts; i += 1) {
-    const num1 = genRandomNum(minNum, maxNum);
-    const num2 = genRandomNum(minNum, maxNum);
-    const operator = operators[genRandomNum(0, operators.length - 1)];
-    const roundQuestion = `${num1} ${operator} ${num2}`;
-    const correctAnswer = calcResult(num1, num2, operator).toString();
-
-    gameRounds.push([roundQuestion, correctAnswer]);
-  }
-
-  playGame(introText, gameRounds);
+  playGame(introText, genCalcRound);
 };
 
 export default calc;
