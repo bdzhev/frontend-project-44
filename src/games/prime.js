@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { playGame, maxAttempts } from '../index.js';
-import genRandomNum from '../utils.js';
+import { genGameRounds } from '../utils.js';
 
 const introText = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const maxNum = 50;
@@ -20,14 +20,8 @@ const isPrime = (num) => {
 };
 
 const prime = () => {
-  const gameRoundData = [];
-  for (let i = 0; i < maxAttempts; i += 1) {
-    const num = genRandomNum(minNum, maxNum);
-    const correctAnswer = isPrime(num) ? 'yes' : 'no';
-    gameRoundData.push([num.toString(), correctAnswer]);
-  }
-
-  playGame(introText, gameRoundData);
+  const gameRounds = genGameRounds(maxAttempts, minNum, maxNum, isPrime);
+  playGame(introText, gameRounds);
 };
 
 export default prime;
