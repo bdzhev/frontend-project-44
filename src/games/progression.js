@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import playGame from '../index.js';
+import { playGame, maxAttempts } from '../index.js';
 import genRandomNum from '../utils.js';
 
 const introText = 'What number is missing in the progression?';
@@ -10,7 +10,7 @@ const numCount = 10;
 
 const progression = () => {
   const gameRoundData = [];
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < maxAttempts; i += 1) {
     const nums = [];
     const addend = genRandomNum(minNum, maxNum);
 
@@ -20,12 +20,11 @@ const progression = () => {
       nums.push(' ');
     }
 
-    const missNumIndex = [genRandomNum(0, numCount) * 2];
+    const missNumIndex = [genRandomNum(0, numCount - 1) * 2];
     const correctAnswer = nums[missNumIndex].toString();
     nums[missNumIndex] = '..';
-    const expression = ''.concat(...nums);
-
-    gameRoundData.push([expression, correctAnswer]);
+    const roundQuestion = ''.concat(...nums);
+    gameRoundData.push([roundQuestion, correctAnswer]);
   }
 
   playGame(introText, gameRoundData);

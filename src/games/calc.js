@@ -1,38 +1,36 @@
 #!/usr/bin/env node
 
-import playGame from '../index.js';
+import { playGame, maxAttempts } from '../index.js';
 import genRandomNum from '../utils.js';
+
+const introText = 'What is the result of the expression?';
+const maxNum = 10;
+const minNum = 1;
+const operators = ['+', '-', '*'];
 
 const calcResult = (num1, num2, operator) => {
   switch (operator) {
     case '+':
-      return (num1 + num2).toString();
+      return (num1 + num2);
     case '-':
-      return (num1 - num2).toString();
+      return (num1 - num2);
     case '*':
-      return (num1 * num2).toString();
+      return (num1 * num2);
     default:
-      return null;
+      throw new Error(`Incorrect operator: ${operator}`);
   }
 };
 
 const calc = () => {
-  const introText = 'What is the result of the expression?';
-  const maxNum = 10;
-  const minNum = 1;
-  const operators = ['+', '-', '*'];
-
   const gameRoundData = [];
-  for (let j = 0; j < 3; j += 1) {
-    const n1 = genRandomNum(minNum, maxNum);
-    const n2 = genRandomNum(minNum, maxNum);
-    const operator = operators[genRandomNum(0, operators.length)];
+  for (let i = 0; i < maxAttempts; i += 1) {
+    const num1 = genRandomNum(minNum, maxNum);
+    const num2 = genRandomNum(minNum, maxNum);
+    const operator = operators[genRandomNum(0, operators.length - 1)];
+    const roundQuestion = `${num1} ${operator} ${num2}`;
+    const correctAnswer = calcResult(num1, num2, operator).toString();
 
-    const expression = `${n1} ${operator} ${n2}`;
-
-    const correctAnswer = calcResult(n1, n2, operator);
-
-    gameRoundData.push([expression, correctAnswer]);
+    gameRoundData.push([roundQuestion, correctAnswer]);
   }
 
   playGame(introText, gameRoundData);
