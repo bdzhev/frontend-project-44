@@ -6,7 +6,7 @@
 
 # Игра 'Brain-games' // The 'Brain-games' terminal game
 
-## Описание / Descrioption
+## Описание / Description
 Brain-games – это простая математическая игра-квиз, в которую можно сыграть с помощью командной строки  вашего компюьтера.
 ENG: Brain-games is a simple maths quiz-game, which can be played in your terminal.
 
