@@ -8,8 +8,7 @@ const maxNum = 10;
 const minNum = 1;
 const numCount = 10;
 
-const genProgression = (progressionLen, addend) => {
-  const startNum = genRandomNum(minNum, maxNum);
+const genProgression = (progressionLen, addend, startNum) => {
   const progressionNums = [];
   for (let i = 0; i < progressionLen; i += 1) {
     const nextProgressionNum = startNum + i * addend;
@@ -20,7 +19,8 @@ const genProgression = (progressionLen, addend) => {
 
 const genProgressionRound = () => {
   const addend = genRandomNum(minNum, maxNum);
-  const progressionNums = genProgression(numCount, addend);
+  const startNum = genRandomNum(minNum, maxNum);
+  const progressionNums = genProgression(numCount, addend, startNum);
   const missingNumIndex = genRandomNum(0, numCount - 1);
   const correctAnswer = progressionNums[missingNumIndex].toString();
   progressionNums[missingNumIndex] = '..';
