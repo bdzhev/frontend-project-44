@@ -22,8 +22,8 @@ const genGCDRound = () => {
   return [roundQuestion, correctAnswer];
 };
 
-const gcd = () => {
+const playGCD = () => {
   playGame(introText, genGCDRound);
 };
 
-export default gcd;
+export default playGCD;

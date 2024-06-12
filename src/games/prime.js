@@ -26,8 +26,8 @@ const genPrimeRound = () => {
   return [num, correctAnswer];
 };
 
-const prime = () => {
+const playPrime = () => {
   playGame(introText, genPrimeRound);
 };
 
-export default prime;
+export default playPrime;

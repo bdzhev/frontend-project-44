@@ -8,19 +8,19 @@ const maxNum = 10;
 const minNum = 1;
 const numCount = 10;
 
-const genProgression = (progressionLen, addend, startNum) => {
+const genProgression = (progressionLen, addendNum, startNum) => {
   const progressionNums = [];
   for (let i = 0; i < progressionLen; i += 1) {
-    const nextProgressionNum = startNum + i * addend;
+    const nextProgressionNum = startNum + i * addendNum;
     progressionNums.push(nextProgressionNum);
   }
   return progressionNums;
 };
 
 const genProgressionRound = () => {
-  const addend = genRandomNum(minNum, maxNum);
+  const addendNum = genRandomNum(minNum, maxNum);
   const startNum = genRandomNum(minNum, maxNum);
-  const progressionNums = genProgression(numCount, addend, startNum);
+  const progressionNums = genProgression(numCount, addendNum, startNum);
   const missingNumIndex = genRandomNum(0, numCount - 1);
   const correctAnswer = progressionNums[missingNumIndex].toString();
   progressionNums[missingNumIndex] = '..';
@@ -28,8 +28,8 @@ const genProgressionRound = () => {
   return [roundQuestion, correctAnswer];
 };
 
-const progression = () => {
+const playProgression = () => {
   playGame(introText, genProgressionRound);
 };
 
-export default progression;
+export default playProgression;

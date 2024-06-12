@@ -15,8 +15,8 @@ const genEvenRound = () => {
   return [num, correctAnswer];
 };
 
-const even = () => {
+const playEven = () => {
   playGame(introText, genEvenRound);
 };
 
-export default even;
+export default playEven;

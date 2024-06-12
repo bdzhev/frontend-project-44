@@ -30,8 +30,8 @@ const genCalcRound = () => {
   return [roundQuestion, correctAnswer];
 };
 
-const calc = () => {
+const playCalc = () => {
   playGame(introText, genCalcRound);
 };
 
-export default calc;
+export default playCalc;
